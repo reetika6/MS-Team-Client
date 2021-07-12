@@ -77,13 +77,7 @@ const ContextProvider = ({children}) =>{
             message,
             isGroupChat,
         };
-        // const peer = new Peer({initiator : true});
-        // peer.on('signal',(data)=>{
             socket.emit('Message', messageContent);
-            // setMessagelist([...messagelist,MessageContent.content]);
-            // setMessage('');
-        // });
-        
     }
 
     const callUser =(id) => {
@@ -117,18 +111,6 @@ const ContextProvider = ({children}) =>{
 
 
     const toggleAudioVideo = (isVideoOn, isAudioOn) => {
-        // const videotrack = stream.getTracks().find(track => track.kind === 'video');
-        // const audiotrack = stream.getTracks().find(track => track.kind === 'audio');
-        // if (videotrack.readyState === 'live')
-        //if (!isVideoOn && !isAudioOn) {
-        //  setStream(null);
-        //    myVideo.current.srcObject = null;
-        // } else {
-        //     getStream(isVideoOn, isAudioOn);
-        // }
-        //} else if (isVideoOn && isAudioOn) {
-        //  getStream(isVideoOn, isAudioOn);
-        //}
             stream.getTracks().forEach(track => {
                 if (track.readyState === 'live' && track.kind === 'video') {
                     track.enabled=isVideoOn;
@@ -138,14 +120,6 @@ const ContextProvider = ({children}) =>{
                 }
             });
     };
-    
-    /*const getStream = (video, audio) => {
-        navigator.mediaDevices.getUserMedia({ video, audio })
-        .then((currentStream) => {
-            setStream(currentStream);
-            myVideo.current.srcObject = currentStream;
-        });
-    };*/
     return (
         <SocketContext.Provider value={{
             call,

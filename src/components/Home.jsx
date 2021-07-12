@@ -11,7 +11,7 @@ import { SocketContext } from '../SocketContext';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
-      margin: theme.spacing(1),
+      margin: theme.spacing(2),
       width: '25ch',
     },
   },
@@ -45,8 +45,7 @@ export default function Home() {
     >
       <form className={classes.root} noValidate autoComplete="off">
         <TextField required id="username" label="Enter your name" value={value} onChange={onChange} />
-        <Button variant="outlined" color="primary" onClick={goToNewMeeting}>Create an instant meeting</Button>
-        {/*<Button variant="outlined" color="secondary" onClick={goToVideoCall}>Call a friend</Button>*/}
+        <Button variant="outlined" color="primary" onClick={goToNewMeeting}>Create a meeting</Button>
       </form>
     </Grid>
   );

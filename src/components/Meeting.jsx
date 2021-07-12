@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   paperLeft: {
-    flex: 1,
+    flex: 4,
     height: '100%',
     margin: 10,
     textAlign: 'center',
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
   paperRight: {
     height: 400,
-    flex: 4,
+    flex: 1,
     margin: 10,
     textAlign: 'center',
 
@@ -96,7 +96,7 @@ const Meeting = () => {
        <Paper className={classes.paperLeft}>
         <Grid>
       <VideoPlayer />
-      <Options>
+      <Options >
         <Notifications />
       </Options>
       </Grid>
