@@ -20,11 +20,14 @@ const ContextProvider = ({children}) =>{
     const userVideo = useRef();
     const connectionRef = useRef();
 
+    //get audio video stream and sets it as myVideo
     const startVideoStream = async () => {
         const currentStream = await navigator.mediaDevices.getUserMedia({ video:true, audio:true})
         setStream(currentStream);
         myVideo.current.srcObject = currentStream;
     };
+    
+    //Adds messages to existing meetingid or adds a new meeting id and its corresponding messagelists 
     useEffect(() => {
         socket.on('I',(id) => setMe(id));
         socket.on('recieved_message', (data)=> {
@@ -50,6 +53,7 @@ const ContextProvider = ({children}) =>{
         });
     }, []);
 
+    //Accepts the incoming call and connects the users
     const answerCall =() => {
         setCallAccepted(true);
 
@@ -80,6 +84,7 @@ const ContextProvider = ({children}) =>{
             socket.emit('Message', messageContent);
     }
 
+    // Initiates the call to the desired id
     const callUser =(id) => {
         const peer = new Peer({ initiator : true,trickle:false, stream});
 
@@ -101,6 +106,7 @@ const ContextProvider = ({children}) =>{
 
     }
 
+    //ends the call
     const leaveCall =() =>{
         setCallEnded(true);
         connectionRef.current.destroy();
