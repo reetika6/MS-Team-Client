@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   paperRight: {
-    height: 600,
+    height: 400,
     flex: 4,
     margin: 10,
     textAlign: 'center',

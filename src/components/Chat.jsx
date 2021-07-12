@@ -24,10 +24,10 @@ const useStyles = makeStyles({
       backgroundColor: '#e0e0e0'
   },
   borderRight500: {
-      borderRight: '1px solid #e0e0e0'
+      borderRight: '0.5px solid #e0e0e0'
   },
   messageArea: {
-    height: '70vh',
+    height: '60vh',
     overflowY: 'auto'
   }
 });
@@ -85,7 +85,11 @@ const Chat = ({
                 <Divider />
                 <Grid container style={{padding: '20px'}}>
                     <Grid item xs={11}>
-                        <TextField id="outlined-basic-email" value={value} onChange={onChange} label="Type Something" fullWidth />
+                        <TextField id="outlined-basic-email" value={value} onChange={onChange} onKeyPress={(e) =>{ 
+                          if(e.key=='Enter'){
+                            sendAndClear(id, value, true)
+                          }
+                        }} label="Type Something" fullWidth />
                     </Grid>
                     <Grid xs={1} align="right">
                         <Fab color="primary" aria-label="add" onClick={() => sendAndClear(id, value, true)}><SendIcon /></Fab>

@@ -7,9 +7,9 @@ import { SocketContext } from '../SocketContext';
 
 const useStyles = makeStyles((theme) => ({
     video: {
-      width: '550px',
+      width: '250px',
       [theme.breakpoints.down('xs')]: {
-        width: '300px',
+        width: '200px',
       },
     },
     gridContainer: {
@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     paper: {
-      padding: '10px',
+      padding: '5px',
       border: '2px solid black',
-      margin: '10px',
+      margin: '5px',
     },
   }));
 
@@ -76,13 +76,13 @@ const VideoPlayer =() =>{
                 <Grid item xs={12} md={6}>
                     <Typography varient='h5' gutterBottom>{name || 'Name'}</Typography>
                     <video playsInline muted ref={myVideo} autoPlay className={classes.video}/>
+                </Grid>
                     <Button color='fixed' onClick={toggleVideoStatus}>
                           {isVideoOn ? <Videocam/> : <VideocamOff/>}
                     </Button>
                     <Button onClick={toggleAudioStatus}>
                           {isAudioOn ? <Mic/> : <MicOff/>}
                     </Button>
-                </Grid>
             </Paper>
         )}
         {/*other user's video*/}

@@ -35,17 +35,9 @@ export default function Home() {
     setName(value);
     const url = `meeting/${uuidv4()}`;
     await navigator.clipboard.writeText(`${window.location.href}${url}`);
+    alert('Link for the meeting copied to clipboard');
     history.push(url);
   };
-  
-  // const goToVideoCall = () => {
-  //   if (!value || !value.trim()) {
-  //     alert('Please enter name');
-  //     return;
-  //   }
-  //   setName(value);
-  //   history.push('call');
-  // };
 
   return (
     <Grid container
