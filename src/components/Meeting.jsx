@@ -59,7 +59,7 @@ const Meeting = () => {
   let { id } = useParams();
   useEffect(() => {
     if (I) {
-      fetch(`https://ms-teams-server.herokuapp.com/history`, {
+      fetch(`https://msteamsserver.herokuapp.com/history`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
