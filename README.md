@@ -39,4 +39,7 @@ Thus I completed it within the time and in a smooth manner by following Agile Me
 The application is deployed and url provided below is the link. By using this you can have a live demo of the product  
 `https://msteamsclient.vercel.app/`
 
+### Video Demo
+Live Demo of the working prototype `https://youtu.be/rUj7Kc08qzc` or `https://www.loom.com/share/2a9628cc17234d32b4d2604daae93f22`
+
  
